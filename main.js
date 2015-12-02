@@ -20,10 +20,10 @@ $(document).ready(function() {
   		var bookImages = data.books[i].image;
   		var bookRelease = data.books[i].releaseDate;
 
-  	 	$("#books-list").append("<p> Title: " + bookTitles +  "</p>");
-  	 	$("#books-list").append("<p> Author: " + bookAuthors +  "</p>");
-  	 	$("#books-list").append("<img src=" + bookImages +  ">");
-  	 	$("#books-list").append("<p> Release Date: " + bookRelease +  "</p>");
+  	 	$("#books-list").append("<p> Title: " + bookTitles + "</p>" +
+  	 		"<p> Author: " + bookAuthors +  "</p>" +
+  	 		"<img src=" + bookImages +  ">" +
+  	 		"<p> Release Date: " + bookRelease +  "</p>");
   	}
 
   	},

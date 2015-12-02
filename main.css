@@ -3,3 +3,10 @@
 body {
   background-color: lightblue; /* sanity check */
 }
+
+img {
+	height: auto;
+	width: auto;
+	max-width: 250px;
+	max-height: 250px;
+}
