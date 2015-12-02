@@ -11,10 +11,10 @@ $(document).ready(function() {
   var id;
 
   $(".delete").click(function(event) {
-  	console.log("what");
+  	console.log(this.id);
   	$.ajax({
 		  method: "DELETE",
-		  url: endpointPOST + $("#id"),
+		  url: endpointPOST + (this.id),
 		  success: function () {
 		    console.log("book is GONE");
 		  },
@@ -109,11 +109,11 @@ $(document).ready(function() {
         image = element.image;
         id = element._id;
 
-        var showBook = $('#books-list').append('<hr><div id="' + id + '"><p>Title: ' + title + '</p>' +
+        var showBook = $('#books-list').append('<hr><div><p>Title: ' + title + '</p>' +
         '</br><p>Author: ' + author + '</p>' +
         '</br><p>Release Date: ' + releaseDate + '</p>' +
         '</br><img class="small" src="' + image + '">' +
-        '<input class="delete" type="submit" value="delete"/>' +
+        '<input class="delete" id="' + id + '" type="submit" value="delete"/>' +
         '<input class="edit" type="submit" value="edit"/>');
 			});
 		} 
