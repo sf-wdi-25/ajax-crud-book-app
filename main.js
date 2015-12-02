@@ -1,28 +1,30 @@
 // wait for DOM to load before running JS
 $(document).ready(function() {
 
-	var getAndPostEndpoint = "https://super-crud.herokuapp.com/books";
+var getAndPostEndpoint = 'https://super-crud.herokuapp.com/books';
 
   console.log('JS is loaded!'); // sanity check
 
-	function convertStringToSearchTerm(string) {
-	    string = string.replace(/ /g, "+");
-	    return string;
-	}
+	$('#search').click(function(event) {
+			$('#title').html('');
 
-	$("#search").click(function(event) {
-			$("#title").html("");
+			var getTitle = $('#title').val();
+			var getAuthor = $('#author').val();
+			var getReleaseDate = $('#releaseDate').val();
+			var getImage = $('#image').val();
 
-			var getTitle = $("#title").val();
-			var getAuthor = $("#author").val();
-			var getReleaseDate = $("#releaseDate").val();
-			var getImage = $("#image").val();
+			if(getTitle === element.title ||
+				getAuthor === element.author ||
+				getReleaseDate === element.releaseDate ||
+				getImage === element.image) {
+					$('#books-list').html('');
+					//clear all of the books in the #books-list html div
 
-			convertStringToSearchTerm(getTitle);
-
-			if('getTitle is equal to any of the' === element.title) {
-					'clear all of the books in the #books-list html div';
-					'append the object that has that title into the html';
+					//append the object that has that title into the html
+					$('#books-list').append('<hr><p>Title: ' + title + '</p>' +
+		          '</br><p>Author: ' + author + '</p>' +
+		          '</br><p>Release Date: ' + releaseDate + '</p>' +
+		          '</br><img src="' + image + '">');
 			}
 	});
 		$.ajax({
@@ -39,10 +41,10 @@ $(document).ready(function() {
 		          var releaseDate = element.releaseDate;
 		          var image = element.image;
 		          console.log(element);
-		          $("#books-list").append("<hr><p>Title: " + title + "</p>" +
-		          "</br><p>Author: " + author + "</p>" +
-		          "</br><p>Release Date: " + releaseDate + "</p>" +
-		          "</br><img src='" + image + "'>");
+		          $('#books-list').append('<hr><p>Title: ' + title + '</p>' +
+		          '</br><p>Author: ' + author + '</p>' +
+		          '</br><p>Release Date: ' + releaseDate + '</p>' +
+		          '</br><img src="' + image + '">');
 						});
 			}
 	});
