@@ -3,3 +3,12 @@
 body {
   background-color: lightblue; /* sanity check */
 }
+
+img {
+	height: auto;
+	width: 400px;
+}
+
+#books-list {
+	text-align: center;
+}
