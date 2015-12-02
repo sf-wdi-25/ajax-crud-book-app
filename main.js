@@ -6,7 +6,7 @@ $(document).ready(function() {
   $.ajax({
   	method: "GET",
   	url: "https://super-crud.herokuapp.com/books",
-  	success: function (data) {
+  	success : function (data) {
   		data.books.forEach(function(element) {
   			$("#books-list").append("<img src=" + element.image + ">");
   			$("#books-list").append("<p>Title: " + element.title + "</p>");
@@ -15,4 +15,18 @@ $(document).ready(function() {
   		});
   	}
   });
+
+	$("#save").click(function(event) {
+		event.preventDefault();
+	  $.ajax({
+	  	method: "POST",
+	  	url: "https://super-crud.herokuapp.com/books",
+	  	data: {
+	  		title: $("#title").val(),
+	  		author: $("#author").val(),
+	  		image: $("#image").val(),
+	  		releaseDate: $("#releaseDate").val()
+	  	}
+	  });
+	});
 });
