@@ -3,3 +3,8 @@
 body {
   background-color: lightblue; /* sanity check */
 }
+
+.small {
+	width: 100px;
+	height: 100px;
+}
