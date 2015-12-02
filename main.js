@@ -15,11 +15,16 @@ $(document).ready(function() {
 			method: 'POST',
 			url: getAndPostEndpoint + "/",
 			data: {
-					element.title.push = [getTitle];
-					element.author.push = [getAuthor];
-					element.releaseDate.push = [getReleaseDate];
-					element.image.push = [getImage];
-				};
+					title: getTitle,
+					author: getAuthor,
+					releaseDate: getReleaseDate,
+					image: getImage,
+			},
+			success: function() {
+				alert();
+			},
+			error: function() {
+				alert(no);
 			}
 		});
 	});
