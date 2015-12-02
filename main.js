@@ -13,14 +13,13 @@ $(document).ready(function() {
 	
 		$.ajax({
 			method: 'POST',
-			url: getAndPostEndpoint,
-			success: function (data,index) {
-				data.books(function(element,index){
+			url: getAndPostEndpoint + "/",
+			data: {
 					element.title.push = [getTitle];
 					element.author.push = [getAuthor];
 					element.releaseDate.push = [getReleaseDate];
 					element.image.push = [getImage];
-				});
+				};
 			}
 		});
 	});
