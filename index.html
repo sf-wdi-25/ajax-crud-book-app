@@ -20,7 +20,19 @@
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">AJAX Book App</h1>
         <br>
-        <div id="books-list"></div>
+        <div id="create">
+          <form>
+            <p><input type="text" placeholder = "Title" id="title"></p>
+            <p><input type="text" placeholder = "Author" id="author"></p>
+            <p><input type="text" placeholder = "Image" id="image"></p>
+            <p><input type="text" placeholder = "Release Date" id="release"></p>
+            <input type="submit" value="Save" id="submit" class="btn btn-primary" />  
+          </form>
+        </div>
+        <div id="books-list">
+          <ul>
+          </ul>
+        </div>   
       </div>
     </div>
   </div>

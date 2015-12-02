@@ -1,5 +1,32 @@
 /* put custom styles in this file */
 
 body {
-  background-color: lightblue; /* sanity check */
+  background-color: white; /* sanity check */
+  font-family: Arial;
 }
+
+img {
+	height: 200px;
+	width: 200px;
+}
+
+li {
+	list-style-type: none;
+}
+
+input {
+	width: 40%;
+}
+
+hr {
+	width: 40%;
+}
+
+#create {
+	text-align: center;
+}
+
+#books-list {
+	text-align: center;
+}
+
