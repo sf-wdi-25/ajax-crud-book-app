@@ -3,3 +3,6 @@
 body {
   background-color: lightblue; /* sanity check */
 }
+#book-list{
+	height : 100px;
+}

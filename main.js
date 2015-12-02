@@ -12,11 +12,11 @@ $(document).ready(function() {
 		success: function (data) {
 			console.log(data);
 			data.books.forEach (function(book){
-				$("#books-list").append("<p>" + book.title  +  "</p>");
-				$("#books-list").append("<p>" + book.author  +  "</p>");
-				$("#books-list").append("<img src=" + book.image + "</img>");
-				$("#books-list").append("<p>" + book.releaseDate  +  "</p>");
-				$("#books-list").append("<p>" + book._id  +  "</p>");
+				$("#books-list").append("<img src='" + book.image + "' class='img-responsive'>");
+				$("#books-list").append("<p>" + "title: " + book.title  +  "</p>");
+				$("#books-list").append("<p>" + "author: " + book.author  +  "</p>");
+				$("#books-list").append("<p>" + "release date: " +book.releaseDate  +  "</p>");
+				$("#books-list").append("<p>" + "book id: " +  book._id  +  "</p>");
 			});
 		}
 
