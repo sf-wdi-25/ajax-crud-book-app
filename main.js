@@ -5,6 +5,11 @@ $(document).ready(function() {
 
   var readBooksUrl= "https://super-crud.herokuapp.com/books";
 
+  // var userTitle = $("#inputTitle").val();
+  // var userAuthor = $("#inputAuthor").val();
+  // var userImage = $("inputImage").val();
+  // var userReleaseDate = $("inputReleaseDate").val();
+
   $.ajax({
   	method: "GET",
   	url: readBooksUrl,
@@ -31,5 +36,24 @@ $(document).ready(function() {
   		console.log("Mistake was made.");
   	}
   });
+
+//  $.ajax({
+//   	method: "POST",
+//   	url: "https://super-crud.herokuapp.com/books",
+//   	data: {
+//     	title: "Breakmaster: Be a Breaker, not a Broker",
+//     	author: "Kayvon Ranjbar",
+//     	image: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/7/005/01a/0e1/3a74243.jpg",
+//     	releaseDate: "February 29, 2004"
+//   	},
+//   	success: function (book) {
+//     	console.log("your book was successfully created!");
+//     	console.log("your book has an id of", book._id);
+//     	// render book to page
+//   	},
+//   	error: function () {
+//     console.error("Book not created");
+//   }
+// });
 
 });
