@@ -32,6 +32,58 @@ $(document).ready(function() {
         var author = element.author;
         var releaseDate = element.releaseDate;
         var image = element.image;
+        var id = element._id;
+
+			  $("#create").click(function(event) {
+					console.log(title);
+					var getTitle = $("#title").val();
+					var getAuthor = $("#author").val();
+					var getReleaseDate = $("#releaseDate").val();
+					var getImage = $("#image").val();
+					
+
+					if(0 === 0) {
+							$.ajax({
+								method: 'POST',
+								url: endpointGET + "/",
+								data: {
+										title: getTitle,
+										author: getAuthor,
+										releaseDate: getReleaseDate,
+										image: getImage,
+								},
+								success: function() {
+									alert();
+								},
+								error: function() {
+									alert(no);
+								}
+							});
+						} else {
+							$.ajax({
+								method: 'POST',
+								url: endpointGET + "/",
+								data: {
+										title: getTitle,
+										author: getAuthor,
+										releaseDate: getReleaseDate,
+										image: getImage,
+								},
+								success: function() {
+									alert();
+								},
+								error: function() {
+									alert(no);
+								}
+							});
+						}
+				});
+
+
+
+
+
+
         var showBook = $('#books-list').append('<hr><p>Title: ' + title + '</p>' +
         '</br><p>Author: ' + author + '</p>' +
         '</br><p>Release Date: ' + releaseDate + '</p>' +
@@ -41,50 +93,7 @@ $(document).ready(function() {
 		} 
 	});
 
-	$("#create").click(function(event) {
-		console.log(title);
-		var getTitle = $("#title").val();
-		var getAuthor = $("#author").val();
-		var getReleaseDate = $("#releaseDate").val();
-		var getImage = $("#image").val();	
-		
-
-		if(0 === 0) {
-				$.ajax({
-					method: 'POST',
-					url: endpointGET + "/",
-					data: {
-							title: getTitle,
-							author: getAuthor,
-							releaseDate: getReleaseDate,
-							image: getImage,
-					},
-					success: function() {
-						alert();
-					},
-					error: function() {
-						alert(no);
-					}
-				});
-			} else {
-				$.ajax({
-					method: 'POST',
-					url: endpointGET + "/",
-					data: {
-							title: getTitle,
-							author: getAuthor,
-							releaseDate: getReleaseDate,
-							image: getImage,
-					},
-					success: function() {
-						alert();
-					},
-					error: function() {
-						alert(no);
-					}
-				});
-			}
-	});
+	
 
  //  $.ajax({
 
