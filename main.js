@@ -19,4 +19,14 @@ $(document).ready(function() {
   		}
 	})
 
+	$.ajax({
+		method: 'POST',
+		url: 'https://super-crud.herokuapp.com/books/',
+		data: [{
+			"title": "Magic for Dummies",
+			"author": "David Blaine",
+			"releaseDate": "02/30/2100"
+		}]
+	})
+
 });
