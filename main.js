@@ -18,20 +18,20 @@ var getAndPostEndpoint = 'https://super-crud.herokuapp.com/books';
           $('#books-list').append('<hr><p>Title: ' + title + '</p>' +
           '</br><p>Author: ' + author + '</p>' +
           '</br><p>Release Date: ' + releaseDate + '</p>' +
-          '</br><img src="' + image + '">');
+          '</br><img class="small" src="' + image + '">');
 
 					$('#search').click(function(event) {
 
-					var getAuthor = $('#author').val();
 					var getTitle = '"' + $('#title').val() + '"';
+					var getAuthor = $('#author').val();
 					var getReleaseDate = '"' + $('#releaseDate').val() + '"';
 					var getImage = '"' + $('#image').val() + '"';
 					
-					if((title.toLowerCase().indexOf(getTitle) >= 0) ||
-						getTitle === title ||
+					if(getTitle === title ||
 						getAuthor === author ||
 						getReleaseDate === releaseDate ||
 						getImage === image) {
+							console.log(image + releaseDate + title + author);
 							$('#books-list').html('');
 							//clear all of the books in the #books-list html div
 
@@ -39,7 +39,7 @@ var getAndPostEndpoint = 'https://super-crud.herokuapp.com/books';
 							$('#books-list').append('<hr><p>Title: ' + title + '</p>' +
 						  '</br><p>Author: ' + author + '</p>' +
 						  '</br><p>Release Date: ' + releaseDate + '</p>' +
-						  '</br><img src="' + image + '">');
+						  '</br><img class="small" src="' + image + '">');
 					}
 	});
 						});
