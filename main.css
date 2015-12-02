@@ -3,3 +3,6 @@
 body {
   background-color: lightblue; /* sanity check */
 }
+img {
+	height: 200px;
+}

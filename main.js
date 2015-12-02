@@ -5,4 +5,27 @@ $(document).ready(function() {
 
   // your code here
 
+
+	$.ajax({
+		method: 'GET',
+		url: 'https://super-crud.herokuapp.com/books',
+		success: function (data) {
+			console.log(data);
+			data.books.forEach (function(book){
+				$("#books-list").append("<img src=" + book.image + ">");
+				$("#books-list").append("<p>" + "title: " + book.title  +  "</p>");
+				$("#books-list").append("<p>" + "author: " + book.author  +  "</p>");
+				$("#books-list").append("<p>" + "release date: " + book.releaseDate  +  "</p>");
+				$("#books-list").append("<p>" + "book id: " +  book._id  +  "</p>");
+			});
+		}
+	});
+	$.ajax({
+	method: 'POST',
+		url: 'https://super-crud.herokuapp.com/books',
+		success: function (data) {
+		}
+
+	});
 });
+
