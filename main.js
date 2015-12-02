@@ -10,6 +10,30 @@ $(document).ready(function() {
   var image;
   var id;
 
+  $(".delete").click(function(event) {
+		$.ajax({
+		  method: "DELETE",
+		  url: endpointPOST + $("#id"),
+		  success: function () {
+		    console.log("book is GONE");
+		  },
+		  error: function () {
+		    console.error("the book endures");
+		  }
+		});
+	});
+
+  $.ajax({
+		  method: "DELETE",
+		  url: endpointPOST + '565f1768dc6dad110073c2b2',
+		  success: function () {
+		    console.log("book is GONE");
+		  },
+		  error: function () {
+		    console.error("the book endures");
+		  }
+		});
+
 
 	$("#create").click(function(event) {
 		console.log(title);
@@ -94,11 +118,12 @@ $(document).ready(function() {
         image = element.image;
         id = element._id;
 
-        var showBook = $('#books-list').append('<hr><p>Title: ' + title + '</p>' +
+        var showBook = $('#books-list').append('<hr><div id="' + id + '"><p>Title: ' + title + '</p>' +
         '</br><p>Author: ' + author + '</p>' +
         '</br><p>Release Date: ' + releaseDate + '</p>' +
-        '</br><img class="small" src="' + image + '">');
-
+        '</br><img class="small" src="' + image + '">' +
+        '<input class="delete" type="submit" value="delete"/>' +
+        '<input class="edit" type="submit" value="edit"/>');
 			});
 		} 
 	});
