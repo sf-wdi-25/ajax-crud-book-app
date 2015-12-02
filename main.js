@@ -47,27 +47,43 @@ $(document).ready(function() {
 		var getAuthor = $("#author").val();
 		var getReleaseDate = $("#releaseDate").val();
 		var getImage = $("#image").val();	
-	
-		$.ajax({
-			method: 'POST',
-			url: endpointGET + "/",
-			data: {
-					title: getTitle,
-					author: getAuthor,
-					releaseDate: getReleaseDate,
-					image: getImage,
-			},
-			if(0 === 0) {
-				0 = 0;
+		
+
+		if(0 === 0) {
+				$.ajax({
+					method: 'POST',
+					url: endpointGET + "/",
+					data: {
+							title: getTitle,
+							author: getAuthor,
+							releaseDate: getReleaseDate,
+							image: getImage,
+					},
+					success: function() {
+						alert();
+					},
+					error: function() {
+						alert(no);
+					}
+				});
 			} else {
-				success: function() {
-				alert();
-				},
-				error: function() {
-					alert(no);
-				}
+				$.ajax({
+					method: 'POST',
+					url: endpointGET + "/",
+					data: {
+							title: getTitle,
+							author: getAuthor,
+							releaseDate: getReleaseDate,
+							image: getImage,
+					},
+					success: function() {
+						alert();
+					},
+					error: function() {
+						alert(no);
+					}
+				});
 			}
-		});
 	});
 
  //  $.ajax({
