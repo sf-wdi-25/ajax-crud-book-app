@@ -21,14 +21,14 @@ var getAndPostEndpoint = 'https://super-crud.herokuapp.com/books';
           '</br><img src="' + image + '">');
 
 					$('#search').click(function(event) {
-					$('#title').html('');
 
-					var getTitle = $('#title').val();
 					var getAuthor = $('#author').val();
+					var getTitle = '"' + $('#title').val() + '"';
 					var getReleaseDate = '"' + $('#releaseDate').val() + '"';
 					var getImage = '"' + $('#image').val() + '"';
 					
-					if(getTitle === title ||
+					if((title.toLowerCase().indexOf(getTitle) >= 0) ||
+						getTitle === title ||
 						getAuthor === author ||
 						getReleaseDate === releaseDate ||
 						getImage === image) {
