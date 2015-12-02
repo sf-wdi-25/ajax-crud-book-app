@@ -3,11 +3,26 @@ $(document).ready(function() {
 
 	var getAndPostEndpoint = 'https://super-crud.herokuapp.com/books';
 
-	$("#search").click(function(event) {
-					console.log(title);
-					var getTitle = $("#title").val();
-					var getAuthor = $("#author").val();
-					var getReleaseDate = $("#releaseDate").val();	
+
+	$("#create").click(function(event) {
+		console.log(title);
+		var getTitle = $("#title").val();
+		var getAuthor = $("#author").val();
+		var getReleaseDate = $("#releaseDate").val();
+		var getImage = $("#image").val();	
+	
+		$.ajax({
+			method: 'POST',
+			url: getAndPostEndpoint,
+			success: function (data,index) {
+				data.books(function(element,index){
+					element.title.push = [getTitle];
+					element.author.push = [getAuthor];
+					element.releaseDate.push = [getReleaseDate];
+					element.image.push = [getImage];
+				});
+			}
+		});
 	});
 
 	$.ajax({
