@@ -26,7 +26,7 @@ $('input#submit').on('click', function (event) {
 newBook.title = $("input#title").val();  
 newBook.author = $("input#author").val(); 
 newBook.image = $("input#image").val(); 
-newBook.release = $("input#release").val(); 
+newBook.releaseDate = $("input#release").val(); 
 
 
 $.ajax({
