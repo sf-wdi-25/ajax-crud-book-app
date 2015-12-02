@@ -4,6 +4,12 @@ $(document).ready(function() {
 	var endpointGET = 'https://super-crud.herokuapp.com/books';
 	var endpointPOST = 'https://super-crud.herokuapp.com/books/';
 
+	var title;
+  var author;
+  var releaseDate;
+  var image;
+  var id;
+
 
 	$("#create").click(function(event) {
 		console.log(title);
@@ -19,7 +25,7 @@ $(document).ready(function() {
 			getImage === image) {
 				$.ajax({
 					method: 'POST',
-					url: endpointPOST + id + "/",
+					url: endpointPOST + id,
 					data: {
 							title: getTitle,
 							author: getAuthor,
@@ -82,11 +88,11 @@ $(document).ready(function() {
 		url: endpointGET,
 		success: function (data,index) {
 			data.books.forEach(function(element,index){
-        var title = element.title;
-        var author = element.author;
-        var releaseDate = element.releaseDate;
-        var image = element.image;
-        var id = element._id;
+        title = element.title;
+        author = element.author;
+        releaseDate = element.releaseDate;
+        image = element.image;
+        id = element._id;
 
         var showBook = $('#books-list').append('<hr><p>Title: ' + title + '</p>' +
         '</br><p>Author: ' + author + '</p>' +
