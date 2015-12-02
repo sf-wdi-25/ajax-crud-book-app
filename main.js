@@ -37,6 +37,32 @@ $(document).ready(function() {
   	}
   });
 
+// $().on("click", function()){
+
+	//Function would save values to global value after
+	//User inputs string in the submission forms.
+
+//  $.ajax({
+//   	method: "POST",
+//   	url: "https://super-crud.herokuapp.com/books",
+//   	data: {
+//     	title: userTitle,
+//     	author: userAuthor,
+//     	image: userImage,
+//     	releaseDate: userReleaseDate
+//   	},
+//   	success: function (book) {
+//     	console.log("your book was successfully created!");
+//     	console.log("your book has an id of", book._id);
+//     	// render book to page
+//   	},
+//   	error: function () {
+//     console.error("Book not created");
+//   }
+// });
+
+// This is close to the submission process for forms.
+
 //  $.ajax({
 //   	method: "POST",
 //   	url: "https://super-crud.herokuapp.com/books",
@@ -56,4 +82,5 @@ $(document).ready(function() {
 //   }
 // });
 
+//Hard Code of Post, taken from our Exercise
 });
