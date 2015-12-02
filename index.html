@@ -15,12 +15,32 @@
   <title>AJAX Book App</title>
 </head>
 <body>
+<div class="container" style="text-align:center;">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <p>Create A New Book</p>
+       <form><br>
+        Book Title:<br>
+        <input type="text" name="title" placeholder="Leo the Dog">
+        <br>
+        Last name:<br>
+        <input type="text" name="author" placeholder="Kehontas Rowe">
+        <br>
+        Image Url:<br>
+        <input type="text" name="url" placeholder="http://blog.mjdog.com/wp-content/uploads/2011/06/leo-dog.jpg">
+        <br>
+        Release Date:<br>
+        <input type="text" name="releaseDate" placeholder="10/11/12">
+        <br><br>  
+        <input type="submit" value="Submit"><br><br>
+      </form>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">AJAX Book App</h1>
         <br>
         <div id="books-list"></div>
+      
       </div>
     </div>
   </div>
