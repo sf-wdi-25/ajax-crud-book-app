@@ -3,3 +3,28 @@
 body {
   background-color: lightblue; /* sanity check */
 }
+
+.post {
+	display: block;
+	width: 100%;
+	margin: 5px auto;
+	position: relative;
+}
+
+.update {
+	display: block;
+	width: 100%;
+	margin: 5px auto;
+	position: relative;
+}
+
+img {
+	max-width: 150px;
+}
+
+.btn-secondary {
+	background: black;
+	color: white;
+	display: inline;
+	margin-right: 5px;
+}
