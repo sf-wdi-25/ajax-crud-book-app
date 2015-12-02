@@ -7,14 +7,18 @@ $(document).ready(function() {
 
   $.ajax({
   	method: "GET",
-  	url: "https://super-crud.herokuapp.com/books",
+  	url: readBooksUrl,
   	success: function (data){
-  		console.log(data.books[0].title);
+  	//	console.log(data.books[0].title); // prints out first book title
+  		var bookOne = data.books[0].title;
+  		console.log(bookOne);
+  		$("#books-list").append("<p> Title: " + bookOne +  "</p>");
   	},
   	error: function(){
   		console.log("Mistake was made.");
   	}
   });
-  // your code here
+  
+//  $("#books-list").append("<p> Title: +  </p>")
 
 });
