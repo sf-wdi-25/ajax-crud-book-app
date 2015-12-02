@@ -14,7 +14,7 @@ $(document).ready(function() {
 			data.books.forEach (function(book){
 				$("#books-list").append("<p>" + book.title  +  "</p>");
 				$("#books-list").append("<p>" + book.author  +  "</p>");
-				$("#books-list").append("<p>" + book.image  +  "</p>");
+				$("#books-list").append("<img src=" + book.image + "</img>");
 				$("#books-list").append("<p>" + book.releaseDate  +  "</p>");
 				$("#books-list").append("<p>" + book._id  +  "</p>");
 			});
