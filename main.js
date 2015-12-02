@@ -11,7 +11,8 @@ $(document).ready(function() {
   var id;
 
   $(".delete").click(function(event) {
-		$.ajax({
+  	console.log("what");
+  	$.ajax({
 		  method: "DELETE",
 		  url: endpointPOST + $("#id"),
 		  success: function () {
@@ -19,20 +20,10 @@ $(document).ready(function() {
 		  },
 		  error: function () {
 		    console.error("the book endures");
-		  }
+		 	}
 		});
 	});
 
-  $.ajax({
-		  method: "DELETE",
-		  url: endpointPOST + '565f1768dc6dad110073c2b2',
-		  success: function () {
-		    console.log("book is GONE");
-		  },
-		  error: function () {
-		    console.error("the book endures");
-		  }
-		});
 
 
 	$("#create").click(function(event) {
