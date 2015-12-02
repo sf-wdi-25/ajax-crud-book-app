@@ -1,32 +1,23 @@
 // wait for DOM to load before running JS
 $(document).ready(function() {
 
-	var getAndPostEndpoint = 'https://super-crud.herokuapp.com/books';
+	var endpointGET = 'https://super-crud.herokuapp.com/books';
 
-
-	$("#create").click(function(event) {
-		console.log(title);
-		var getTitle = $("#title").val();
-		var getAuthor = $("#author").val();
-		var getReleaseDate = $("#releaseDate").val();
-		var getImage = $("#image").val();	
-	
-		$.ajax({
-			method: 'POST',
-			url: getAndPostEndpoint + "/",
-			data: {
-					title: getTitle,
-					author: getAuthor,
-					releaseDate: getReleaseDate,
-					image: getImage,
-			},
-			success: function() {
-				alert();
-			},
-			error: function() {
-				alert(no);
-			}
-		});
+	$.ajax({
+			
+		// https://super-crud.herokuapp.com/books
+		// GET and POST
+		method: 'GET',
+		url: endpointGET,
+		success: function (data,index) {
+			data.books.forEach(function(element,index){
+        var title = element.title;
+        var author = element.author;
+        var releaseDate = element.releaseDate;
+        var image = element.image;
+        var id = element._id;
+			});
+		} 
 	});
 
 	$.ajax({
@@ -34,7 +25,7 @@ $(document).ready(function() {
 		// https://super-crud.herokuapp.com/books
 		// GET and POST
 		method: 'GET',
-		url: getAndPostEndpoint,
+		url: endpointGET,
 		success: function (data,index) {
 			data.books.forEach(function(element,index){
         var title = element.title;
@@ -47,7 +38,36 @@ $(document).ready(function() {
         '</br><img class="small" src="' + image + '">');
 
 			});
-		}
+		} 
+	});
+
+	$("#create").click(function(event) {
+		console.log(title);
+		var getTitle = $("#title").val();
+		var getAuthor = $("#author").val();
+		var getReleaseDate = $("#releaseDate").val();
+		var getImage = $("#image").val();	
+	
+		$.ajax({
+			method: 'POST',
+			url: endpointGET + "/",
+			data: {
+					title: getTitle,
+					author: getAuthor,
+					releaseDate: getReleaseDate,
+					image: getImage,
+			},
+			if(0 === 0) {
+				0 = 0;
+			} else {
+				success: function() {
+				alert();
+				},
+				error: function() {
+					alert(no);
+				}
+			}
+		});
 	});
 
  //  $.ajax({
