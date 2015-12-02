@@ -4,6 +4,59 @@ $(document).ready(function() {
 	var endpointGET = 'https://super-crud.herokuapp.com/books';
 	var endpointPOST = 'https://super-crud.herokuapp.com/books/';
 
+
+	$("#create").click(function(event) {
+		console.log(title);
+		var getTitle = $("#title").val();
+		var getAuthor = $("#author").val();
+		var getReleaseDate = $("#releaseDate").val();
+		var getImage = $("#image").val();
+		
+
+		if(getTitle === title || 
+			getAuthor === author || 
+			getReleaseDate === releaseDate || 
+			getImage === image) {
+				$.ajax({
+					method: 'POST',
+					url: endpointPOST + id + "/",
+					data: {
+							title: getTitle,
+							author: getAuthor,
+							releaseDate: getReleaseDate,
+							image: getImage,
+					},
+					success: function() {
+						alert("yes update");
+						return;
+					},
+					error: function() {
+						alert("no update");
+						return;
+					}
+				});
+			} else {
+				$.ajax({
+					method: 'POST',
+					url: endpointPOST,
+					data: {
+							title: getTitle,
+							author: getAuthor,
+							releaseDate: getReleaseDate,
+							image: getImage,
+					},
+					success: function() {
+						alert("yes create");
+						return;
+					},
+					error: function() {
+						alert("no create");
+						return;
+					}
+				});
+			}
+	});
+
 	$.ajax({
 			
 		// https://super-crud.herokuapp.com/books
@@ -34,54 +87,6 @@ $(document).ready(function() {
         var releaseDate = element.releaseDate;
         var image = element.image;
         var id = element._id;
-
-			  $("#create").click(function(event) {
-					console.log(title);
-					var getTitle = $("#title").val();
-					var getAuthor = $("#author").val();
-					var getReleaseDate = $("#releaseDate").val();
-					var getImage = $("#image").val();
-					
-
-					if(getTitle === title || 
-						getAuthor === author || 
-						getReleaseDate === releaseDate || 
-						getImage === image) {
-							$.ajax({
-								method: 'POST',
-								url: endpointPOST + id + "/",
-								data: {
-										title: getTitle,
-										author: getAuthor,
-										releaseDate: getReleaseDate,
-										image: getImage,
-								},
-								success: function() {
-									alert("yes update");
-								},
-								error: function() {
-									alert("no update");
-								}
-							});
-						} else {
-							$.ajax({
-								method: 'POST',
-								url: endpointPOST,
-								data: {
-										title: getTitle,
-										author: getAuthor,
-										releaseDate: getReleaseDate,
-										image: getImage,
-								},
-								success: function() {
-									alert("yes create");
-								},
-								error: function() {
-									alert("no create");
-								}
-							});
-						}
-				});
 
         var showBook = $('#books-list').append('<hr><p>Title: ' + title + '</p>' +
         '</br><p>Author: ' + author + '</p>' +
