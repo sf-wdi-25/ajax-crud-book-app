@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
 	var endpointGET = 'https://super-crud.herokuapp.com/books';
+	var endpointPOST = 'https://super-crud.herokuapp.com/books/';
 
 	$.ajax({
 			
@@ -42,10 +43,13 @@ $(document).ready(function() {
 					var getImage = $("#image").val();
 					
 
-					if(0 === 0) {
+					if(getTitle === title || 
+						getAuthor === author || 
+						getReleaseDate === releaseDate || 
+						getImage === image) {
 							$.ajax({
 								method: 'POST',
-								url: endpointGET + "/",
+								url: endpointPOST + id + "/",
 								data: {
 										title: getTitle,
 										author: getAuthor,
@@ -53,16 +57,16 @@ $(document).ready(function() {
 										image: getImage,
 								},
 								success: function() {
-									alert();
+									alert("yes update");
 								},
 								error: function() {
-									alert(no);
+									alert("no update");
 								}
 							});
 						} else {
 							$.ajax({
 								method: 'POST',
-								url: endpointGET + "/",
+								url: endpointPOST,
 								data: {
 										title: getTitle,
 										author: getAuthor,
@@ -70,19 +74,14 @@ $(document).ready(function() {
 										image: getImage,
 								},
 								success: function() {
-									alert();
+									alert("yes create");
 								},
 								error: function() {
-									alert(no);
+									alert("no create");
 								}
 							});
 						}
 				});
-
-
-
-
-
 
         var showBook = $('#books-list').append('<hr><p>Title: ' + title + '</p>' +
         '</br><p>Author: ' + author + '</p>' +
