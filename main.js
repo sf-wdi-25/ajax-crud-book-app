@@ -5,27 +5,45 @@ $(document).ready(function() {
 
   console.log('JS is loaded!'); // sanity check
 
-  $.ajax({
-  	
-		// https://super-crud.herokuapp.com/books
-		// GET and POST
+function convertStringToSearchTerm(string) {
+    string = string.replace(/ /g, "+");
+    return string;
+}
 
-		method: 'GET',
-		url: getAndPostEndpoint,
-		success: function (data,index) {
-			data.books.forEach(function(element,index){
-            var title = element.title;
-            var author = element.author;
-            var releaseDate = element.releaseDate;
-            var image = element.image;
-            console.log(element);
-            $("#books-list").append("<hr><p>Title: " + title + "</p>" +
-            "</br><p>Author: " + author + "</p>" +
-            "</br><p>Release Date: " + releaseDate + "</p>" +
-            "</br><img src=" + image + "/>");
-			});
-		}
-	});
+$("#search").onClick(function(event) {
+	if (event.which === 13) {
+		$("#title").html("");
+
+		var getTitle = $("#title").val();
+		var getAuthor = $("#author").val();
+		var getReleaseDate = $("#releaseDate").val();
+		var getImage = $("#image").val();
+
+		convertStringToSearchTerm(searchTitle);
+
+		$.ajax({
+			
+			// https://super-crud.herokuapp.com/books
+			// GET and POST
+
+			method: 'GET',
+			url: getAndPostEndpoint,
+			success: function (data,index) {
+				data.books.forEach(function(element,index){
+		          var title = element.title;
+		          var author = element.author;
+		          var releaseDate = element.releaseDate;
+		          var image = element.image;
+		          console.log(element);
+		          $("#books-list").append("<hr><p>Title: " + title + "</p>" +
+		          "</br><p>Author: " + author + "</p>" +
+		          "</br><p>Release Date: " + releaseDate + "</p>" +
+		          "</br><img src='" + image + "'>");
+						});
+			  		}
+		});
+	}
+});
 
  //  $.ajax({
 
