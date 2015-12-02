@@ -5,22 +5,26 @@ $(document).ready(function() {
 
   console.log('JS is loaded!'); // sanity check
 
-function convertStringToSearchTerm(string) {
-    string = string.replace(/ /g, "+");
-    return string;
-}
+	function convertStringToSearchTerm(string) {
+	    string = string.replace(/ /g, "+");
+	    return string;
+	}
 
-$("#search").onClick(function(event) {
-	if (event.which === 13) {
-		$("#title").html("");
+	$("#search").click(function(event) {
+			$("#title").html("");
 
-		var getTitle = $("#title").val();
-		var getAuthor = $("#author").val();
-		var getReleaseDate = $("#releaseDate").val();
-		var getImage = $("#image").val();
+			var getTitle = $("#title").val();
+			var getAuthor = $("#author").val();
+			var getReleaseDate = $("#releaseDate").val();
+			var getImage = $("#image").val();
 
-		convertStringToSearchTerm(searchTitle);
+			convertStringToSearchTerm(getTitle);
 
+			if('getTitle is equal to any of the' === element.title) {
+					'clear all of the books in the #books-list html div';
+					'append the object that has that title into the html';
+			}
+	});
 		$.ajax({
 			
 			// https://super-crud.herokuapp.com/books
@@ -40,10 +44,8 @@ $("#search").onClick(function(event) {
 		          "</br><p>Release Date: " + releaseDate + "</p>" +
 		          "</br><img src='" + image + "'>");
 						});
-			  		}
-		});
-	}
-});
+			}
+	});
 
  //  $.ajax({
 
